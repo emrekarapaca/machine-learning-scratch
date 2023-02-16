@@ -1,12 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class Regression():
-    def __init__(self, learning_rate = 0.01, iterations = 1000):
+class Regression:
+    def __init__(self, learning_rate = 0.01, iterations = 1000, lambda_ = 0):
         self.lr_rate = learning_rate
         self.iter = iterations
         self.w = None
         self.b = None
+        self.lambda_ = lambda_
 
     def fit(self, X, y):
         self.w = np.zeros(X.shape[1])
@@ -16,7 +17,7 @@ class Regression():
         for i in range(self.iter):
             f_wx_b = np.dot(X, self.w) + self.b
 
-            dw = (1/num_elements) * np.dot(X.T, (f_wx_b - y))
+            dw = (1/num_elements) * np.dot(X.T, (f_wx_b - y)) + (self.lambda_ * self.w)
             db = (1/num_elements) * np.sum((f_wx_b - y))
             self.w = self.w - self.lr_rate*dw
             self.b = self.b - self.lr_rate*db
