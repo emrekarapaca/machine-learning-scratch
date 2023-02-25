@@ -1,9 +1,9 @@
 import numpy as np
-#0.9289
+#0.9289 
 #used for MNIST dataset
 
 def get_predictions(a3):
-    return np.argmax(a2, 0)
+    return np.argmax(a3, 0)
 
 
 def get_accuracy(predicts, y):
@@ -50,12 +50,12 @@ class ThreeLayerNN:
         self.a3 = None
 
     def init_params(self):
-        self.w1 = np.random.rand(10, 784) - 0.5
-        self.b1 = np.random.rand(10, 1) - 0.5
-        self.w2 = np.random.rand(30, 10) - 0.5
-        self.b2 = np.random.rand(30, 1) - 0.5
-        self.w3 = np.random.rand(10, 30) - 0.5
-        self.b3 = np.random.rand(10, 1) - 0.5
+        self.w1 = np.random.rand(10, 784) 
+        self.b1 = np.random.rand(10, 1) 
+        self.w2 = np.random.rand(30, 10) 
+        self.b2 = np.random.rand(30, 1) 
+        self.w3 = np.random.rand(10, 30) 
+        self.b3 = np.random.rand(10, 1) 
 
     def forward_prop(self, x):
         self.z1 = np.dot(self.w1, x) + self.b1
