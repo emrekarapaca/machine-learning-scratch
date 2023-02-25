@@ -1,7 +1,7 @@
 import numpy as np
 #0.9289
 
-def get_predictions(a2):
+def get_predictions(a3):
     return np.argmax(a2, 0)
 
 
